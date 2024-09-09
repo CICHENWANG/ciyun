@@ -4,13 +4,13 @@ import { router } from '@kit.ArkUI'
 @Component
 struct aboutUs {
   build() {
-    Stack(){
+    Stack() {
       Image($r('app.media.aboutus'))
-      Image($r('app.media.return'))
+      Image($r('app.media.return2'))
         .width(41)
         .height(41)
-        .position({top:51,left:9})
-        .onClick(()=>{
+        .position({ top: 51, left: 9 })
+        .onClick(() => {
           router.back()
         })
     }

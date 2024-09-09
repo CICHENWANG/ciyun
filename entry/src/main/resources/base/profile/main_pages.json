@@ -1,8 +1,17 @@
 {
   "src": [
     "pages/Index",
-    "pages/kepu",
-    "pages/aboutUs"
-
+    "pages/kepu1",
+    "pages/aboutUs",
+    "pages/personalproductions",
+    "pages/personalCollections",
+    "pages/myattentionPage",
+    "pages/personalitytheme_Page",
+    "pages/aboutaccount",
+    "pages/kepu2",
+    "pages/kepu3",
+    "pages/kepu4",
+    "pages/kepu5",
+    "pages/kepu6"
   ]
 }

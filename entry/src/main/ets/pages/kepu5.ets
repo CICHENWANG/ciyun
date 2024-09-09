@@ -5,11 +5,14 @@ import { router } from '@kit.ArkUI'
 @Entry
 @Component
 struct SheetTransitionExample {
-  @State isShow:boolean = false
-  @Builder myBuilder() {
+  @State isShow: boolean = false
+  @State touchStartY: number = 0;
+
+  @Builder
+  myBuilder() {
     Scroll() {
       Column() {
-        Image($r('app.media.kepu2'))
+        Image($r("app.media.kepudetail5"))
       }
       .width('100%')
 
@@ -19,21 +22,21 @@ struct SheetTransitionExample {
     .scrollBar(BarState.Off)
     .width('100%')
   }
-  @State touchStartY: number = 0;
+
   build() {
     Stack() {
-      Image($r('app.media.IndexPage_Kepu'))
-        .bindSheet($$this.isShow, this.myBuilder(),{
-          detents:['80%'],
-          backgroundColor:Color.Gray,
-          blurStyle:BlurStyle.Thick,
-          showClose:true,
+      Image($r('app.media.kepu5'))
+        .bindSheet($$this.isShow, this.myBuilder(), {
+          detents: ['80%'],
+          backgroundColor: Color.Gray,
+          blurStyle: BlurStyle.Thick,
+          showClose: true,
         })
       Image($r('app.media.return'))
         .width(41)
         .height(41)
-        .position({top:51,left:9})
-        .onClick(()=>{
+        .position({ top: 51, left: 9 })
+        .onClick(() => {
           router.back()
         })
     }
@@ -51,5 +54,4 @@ struct SheetTransitionExample {
       }
     })
   }
-
 }

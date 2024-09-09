@@ -1,8 +1,4 @@
 import router from '@ohos.router';
-import { cameraPicker as picker } from '@kit.CameraKit';
-import { camera } from '@kit.CameraKit';
-import { common } from '@kit.AbilityKit';
-import { BusinessError } from '@kit.BasicServicesKit';
 import mine from './mine';
 
 class BannerClass {
@@ -36,67 +32,71 @@ class ArticleClass {
 
 @Entry
 @Component
-struct Index{
+struct Index {
   @State currentTabIndex1: number = 0
   private tabController = new TabsController()
+
   @Builder
   TabBuilder(img: Resource, tag: number) {
     Column() {
       Image(img)
         .margin({ bottom: 20 })
-        .height(this.currentTabIndex1==tag?67:47)
-        .width(this.currentTabIndex1==tag?40:30)
+        .height(this.currentTabIndex1 == tag ? 67 : 47)
+        .width(this.currentTabIndex1 == tag ? 40 : 30)
     }
     .onClick(() => {
       this.currentTabIndex1 = tag
       this.tabController.changeIndex(this.currentTabIndex1)
-      if(this.currentTabIndex1==2){
+      if (this.currentTabIndex1 == 2) {
 
       }
     })
   }
+
   build() {
-      Tabs({barPosition:BarPosition.End, controller: this.tabController }) {
-        TabContent() {
-          Enter()
-        }.tabBar(this.TabBuilder($r('app.media.enterPage_component4'), 0))
-        .padding({ top: 0 })
-        .align(Alignment.Top)
-        TabContent() {
-          Text('朝代')
-        }.tabBar(this.TabBuilder($r('app.media.enterPage_component2'),1))
-        TabContent() {
-        }.tabBar(this.TabBuilder($r('app.media.enterPage_component3'),2))
-        .padding({ top: 0 })
-        .align(Alignment.Top)
-        .margin({ top: 0 })
+    Tabs({ barPosition: BarPosition.End, controller: this.tabController }) {
+      TabContent() {
+        Enter()
+      }.tabBar(this.TabBuilder($r('app.media.enterpage_component1'), 0))
+      .padding({ top: 0 })
+      .align(Alignment.Top)
 
-        // .height('100%')
+      TabContent() {
+        Text('朝代')
+      }.tabBar(this.TabBuilder($r('app.media.enterpage_component2'), 1))
 
-        TabContent() {
-          mine()
-        }.tabBar(this.TabBuilder($r('app.media.enterPage_component1'),3))
-      }
-      .onChange((index: number) => {
-        this.currentTabIndex1 = index
-      })
-      .width('100%')
-      .height('100%')
-      .barHeight(87)
-      .backgroundColor('#F4F2E5')
+      TabContent() {
+      }.tabBar(this.TabBuilder($r('app.media.enterpage_component3'), 2))
+      .padding({ top: 0 })
+      .align(Alignment.Top)
+      .margin({ top: 0 })
+
+      // .height('100%')
+
+      TabContent() {
+        mine()
+      }.tabBar(this.TabBuilder($r('app.media.enterpage_component4'), 3))
     }
+    .onChange((index: number) => {
+      this.currentTabIndex1 = index
+    })
+    .width('100%')
+    .height('100%')
+    .barHeight(87)
+    .backgroundColor('#F4F2E5')
+  }
 }
 
 @Preview
 @Component
-export  struct Enter {
+export struct Enter {
   @State currentTabIndex: number = 0
   private tabController = new TabsController()
 
   @Builder
   TabBuilder(img: Resource, tag: number) {
     Column() {
-      Image(this.currentTabIndex == tag ? $r('app.media.Vector') : $r('app.media.Rectangle1'))
+      Image(this.currentTabIndex == tag ? $r("app.media.Vector") : $r('app.media.Rectangle1'))
         .width(15)
         .height(7)
         .objectFit(ImageFit.Contain)
@@ -115,37 +115,13 @@ export  struct Enter {
   build() {
     Stack({ alignContent: Alignment.Bottom }) {
       Image($r('app.media.Indexpage'))
-      Image($r('app.media.Indexpage_text1')).width(60).height(163).margin({ left: 272, right: 82, bottom: 533 })
+      Image($r('app.media.indexpage_text1')).width(60).height(163).margin({ left: 272, right: 82, bottom: 543 })
       Column() {
         Column() {
           Column({ space: 7 }) {
-            Text('瓷 韵')
-              .fontSize(16)
-              .fontColor("#9A764E")// 设置字体颜色
-              .textAlign(TextAlign.Start)// 设置文本左对齐
-              .fontSize(32)// 设置字体大小为32px
-              .fontWeight(FontWeight.Medium)// 设置字体粗细为600
-              .lineHeight(22)// 设置行高为22px
-              .fontFamily("Inter")// 设置字体为Inter
-              .fontStyle(FontStyle.Normal)// 设置字体样式为正常
-              .textShadow({
-                color: "rgba(0, 0, 0, 0.25)",
-                radius: 4
-              })
-              .textAlign(TextAlign.Start) // 设置文本左对齐
-            Text('——瓷器承载中国文化，散发独特的历史韵味')
-              .fontSize(16)
-              .fontSize(16)// 设置字体大小
-              .fontColor("#9A764E")// 设置字体颜色
-              .textAlign(TextAlign.Start)// 设置文本左对齐
-              .fontWeight(600)// 设置字体粗细为600（SemiBold）
-              .lineHeight(22)// 设置行高为22px
-              .fontFamily("Inter")// 设置字体为Inter
-              .fontStyle(FontStyle.Normal)// 设置字体样式为正常
-              .textShadow({
-                color: "rgba(0, 0, 0, 0.25)",
-                radius: 4
-              })
+            Image($r('app.media.ciyun_text1'))
+              .height(68)
+              .width('100%')
 
           }
           .width('100%')
@@ -178,9 +154,10 @@ export  struct Enter {
                     .borderRadius(10)// 设置圆角为 10px
                     .flexShrink(0)// 禁止组件缩小
                     .objectFit(ImageFit.Contain)
-                    .onClick(()=>{
-                      router.pushUrl({url:'pages/kepu'})
+                    .onClick(() => {
+                      router.pushUrl({ url: 'pages/kepu1' })
                     })
+
                   Image($r('app.media.indexPage_component2'))
                     .width(324)// 设置宽度为 324px
                     .height(114)// 设置高度为 114px

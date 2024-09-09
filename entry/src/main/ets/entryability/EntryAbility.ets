@@ -1,6 +1,6 @@
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { router, window } from '@kit.ArkUI';
+import { window } from '@kit.ArkUI';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
@@ -14,7 +14,7 @@ export default class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage) {
 
 
-    let windowClass: window.Window ;
+    let windowClass: window.Window;
     windowStage.getMainWindow((err, data) => {
       // 1.获取应用主窗口
       windowClass = data;
