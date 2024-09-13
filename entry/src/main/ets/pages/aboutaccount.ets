@@ -17,7 +17,11 @@ struct aboutUs {
           .width(280)
           .height(37)
           .objectFit(ImageFit.Contain)
-
+          .onClick(()=>{
+            if (JSON.stringify(img) === JSON.stringify($r('app.media.aboutcount5'))) {
+              router.pushUrl({ url: 'pages/login' })
+            }
+          })
         // 使用 Blank 组件来填充空白区域
         Blank()
           .layoutWeight(1) // 使 Blank 组件占据 Row 中剩余的空间

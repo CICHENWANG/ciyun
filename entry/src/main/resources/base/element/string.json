@@ -10,7 +10,15 @@
     },
     {
       "name": "EntryAbility_label",
-      "value": "label"
+      "value": "瓷韵"
+    },
+    {
+      "name": "Button_Title",
+      "value": "Photo"
+    },
+    {
+      "name": "Font_family_black",
+      "value": "black"
     }
   ]
 }

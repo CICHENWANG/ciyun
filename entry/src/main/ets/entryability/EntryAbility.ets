@@ -31,7 +31,7 @@ export default class EntryAbility extends UIAbility {
       PersistentStorage.PersistProps([{
         key: "navigationHeight", defaultValue: navigationHeight
       }])
-      windowStage.loadContent('pages/Index', (err, data) => {
+      windowStage.loadContent('pages/open', (err, data) => {
 
       });
     })

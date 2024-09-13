@@ -37,7 +37,7 @@ struct SheetTransitionExample {
         .height(41)
         .position({ top: 51, left: 9 })
         .onClick(() => {
-          router.back()
+          router.pushUrl({url:"pages/Index"})
         })
     }
     .width('100%')
