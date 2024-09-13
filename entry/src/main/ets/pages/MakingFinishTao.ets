@@ -15,7 +15,7 @@ struct MakingFinishTao{
             left:'5%'
           })
           .onClick(()=>{//返回
-            router.back({ url: "pages/make" })
+            router.back()
           })
         Image($r('app.media.text_make_tao'))
           .width('25%')
@@ -56,18 +56,15 @@ struct MakingFinishTao{
       }
       .width('90%')
       .height('80%')
-
-      Column(){
-        Image($r("app.media.all_finish_button"))
-          .width('50%')
-          .position({
-            top:'90%',
-            left:'25%'
-          })
-          .onClick(()=>{
-            router.back({ url: "pages/make" })
-          })
-      }
+      Image($r("app.media.all_finish_button"))
+        .width('50%')
+        .position({
+          top:'90%',
+          left:'25%'
+        })
+        .onClick(()=>{
+          router.pushUrl({ url: "pages/make" })
+        })
     }
     .width('100%')
     .height('100%')

@@ -405,6 +405,7 @@ struct Index {
               top:'80%',
               left:'25%'
             })
+
           Image($r(`app.media.${this.stepBars[this.currentStep].finishText}`))
             .width('25%')
             .position({
@@ -412,10 +413,9 @@ struct Index {
               left:'37%'
             })
             .onClick(()=>{
-              if (this.currentStep+1>4){
-                this.currentStep=4
+              if (this.currentStep<4){
+                this.currentStep++
               }
-              this.currentStep++
               if (this.currentStep===1) {
                 // const words=this.attr.shape.split('_')
                 // this.attr.shape=words[0]+'_'+words[1]+'_tianqiu'
@@ -435,9 +435,20 @@ struct Index {
                 this.attr.drawColor=this.attr.draw+'_blue'
               }
               else {//到制作完成页面
-                router.pushUrl({ url: "pages/MakingFinishCi" })
+
               }
             })
+          if (this.currentStep===4){
+            Image($r('app.media.text_draw_color_finish'))
+              .width('25%')
+              .position({
+                top:'87%',
+                left:'37%'
+              })
+              .onClick(()=>{
+                router.pushUrl({ url: "pages/MakingFinishCi" })
+              })
+          }
         }
 
       }.width('100%').height('34%')

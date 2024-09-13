@@ -57,7 +57,6 @@ const drawColor:Attributes[]=[
   new Attributes(2,'bottle_color_background','bottle_draw_red','赭红',new Pos(53,145),new Pos(80,142.5),new Pos(0,0),'23%','20%'),
   new Attributes(3,'bottle_color_background','bottle_draw_black','玄色',new Pos(68,237),new Pos(95,234.75),new Pos(0,0),'23%','20%'),
 ]
-
 @Entry
 @Component
 struct Tao {
@@ -378,10 +377,9 @@ struct Tao {
               left:'37%'
             })
             .onClick(()=>{
-              if (this.currentStep+1>3){
-                this.currentStep=3
+              if (this.currentStep<3){
+                this.currentStep++
               }
-              this.currentStep++
               if (this.currentStep===1) {
                 const words=this.attr.shape.split('_')
                 //bottle_meiping_white
@@ -394,11 +392,23 @@ struct Tao {
               else if(this.currentStep===3){
                 //bottle_meiping_red_hui_red
                 this.attr.drawColor=this.attr.draw+'_red'
+
               }
               else {//到制作完成页面
-                router.pushUrl({ url: "pages/MakingFinishTao" })
+
               }
             })
+          if (this.currentStep===3){
+            Image($r('app.media.text_draw_color_finish'))
+              .width('25%')
+              .position({
+                top:'87%',
+                left:'37%'
+              })
+              .onClick(()=>{
+                router.pushUrl({ url: "pages/MakingFinishTao" })
+              })
+          }
         }
 
       }.width('100%').height('34%')

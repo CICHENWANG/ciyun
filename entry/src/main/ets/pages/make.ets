@@ -1,5 +1,5 @@
 import { router } from '@kit.ArkUI';
-
+@Entry
 @Preview
 @Component
 export default struct make {
