@@ -1,3 +1,4 @@
+///陶/瓷   步骤显示
 export class StepBar{
   public step:number
   public stepIcons:string[]

@@ -1,3 +1,4 @@
+import { router } from '@kit.ArkUI';
 import { introductionText } from '../uitls/DialogComponent'
 import { BusinessError } from '@kit.BasicServicesKit';
 import { ComponentContent, promptAction } from '@kit.ArkUI';
@@ -82,7 +83,7 @@ struct Tao {
             left:'5%'
           })
           .onClick(()=>{//返回
-
+            router.back()
           })
         Image($r('app.media.text_make_tao'))
           .width('25%')
@@ -392,7 +393,7 @@ struct Tao {
                 this.attr.drawColor=this.attr.draw+'_red'
               }
               else {//到制作完成页面
-
+                router.pushUrl({ url: "pages/MakingFinishTao" })
               }
             })
         }

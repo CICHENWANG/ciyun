@@ -17,7 +17,7 @@ struct MakingFinishTao{
           .onClick(()=>{//返回
             router.back({ url: "pages/make" })
           })
-        Image($r('app.media.text_make_tao'))
+        Image($r('app.media.text_make_ci'))
           .width('25%')
           .position({
             top:'25%',
@@ -29,7 +29,7 @@ struct MakingFinishTao{
           .width('100%')
           .height('100%')
           .objectFit(ImageFit.Contain)
-        Image($r('app.media.text_bottle_mei_red_hui_red'))
+        Image($r('app.media.text_ci_donggua_white_lianhua_blue'))
           .width('55%')
           .position({
             top:'15%',
@@ -41,13 +41,13 @@ struct MakingFinishTao{
             top:'20%',
             left:'33%'
           })
-        Image($r('app.media.bottle_meiping_red_hui_red'))
-          .width('60%')
+        Image($r('app.media.ci_donggua_white_lianhua_blue'))
+          .width('50%')
           .position({
             top:'21%',
-            left:'21%'
+            left:'26%'
           })
-        Image($r("app.media.text_finish_introduction_tao"))
+        Image($r("app.media.text_finish_introduction_ci"))
           .width('70%')
           .position({
             top:'55%',

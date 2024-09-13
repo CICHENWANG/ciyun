@@ -1,3 +1,4 @@
+//制陶/瓷  介绍弹窗
 class Params {
   text: string = '';
 

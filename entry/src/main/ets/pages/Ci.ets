@@ -1,6 +1,6 @@
 import { introductionText } from '../uitls/DialogComponent'
 import { BusinessError } from '@kit.BasicServicesKit';
-import { ComponentContent, promptAction } from '@kit.ArkUI';
+import { ComponentContent, promptAction, router } from '@kit.ArkUI';
 import { StepBar } from '../../ets/entity/StepBar'
 import { Attributes,Pos } from '../../ets/entity/Attributes'
 
@@ -98,7 +98,7 @@ struct Index {
             left:'5%'
           })
           .onClick(()=>{//返回
-
+            router.back()
           })
         Image($r('app.media.text_make_ci'))
           .width('25%')
@@ -433,6 +433,7 @@ struct Index {
               }
               else {//到制作完成页面
 
+                router.pushUrl({ url: "pages/MakingFinishCi" })
               }
             })
         }
