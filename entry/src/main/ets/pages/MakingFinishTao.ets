@@ -1,0 +1,75 @@
+@Entry
+@Component
+struct MakingFinishTao{
+  build() {
+    Column(){
+      Column() {
+        Image($r('app.media.back'))
+          .width('5%')
+          .height('auto')
+          .aspectRatio(1)
+          .position({
+            top:'25%',
+            left:'5%'
+          })
+          .onClick(()=>{//返回
+
+          })
+        Image($r('app.media.text_make_tao'))
+          .width('25%')
+          .position({
+            top:'25%',
+            left:'37%'
+          })
+      }.width('100%').height('8%')
+      Stack() {
+        Image($r("app.media.all_finish_background"))
+          .width('100%')
+          .height('100%')
+          .objectFit(ImageFit.Contain)
+        Image($r('app.media.text_bottle_mei_red_hui_red'))
+          .width('55%')
+          .position({
+            top:'15%',
+            left:'23%'
+          })
+        Image($r('app.media.text_tips'))
+          .width('35%')
+          .position({
+            top:'20%',
+            left:'33%'
+          })
+        Image($r('app.media.bottle_meiping_red_hui_red'))
+          .width('60%')
+          .position({
+            top:'21%',
+            left:'21%'
+          })
+        Image($r('app.media.text_finish_introduction'))
+          .width('70%')
+          .position({
+            top:'55%',
+            left:'15%'
+          })
+      }
+      .width('90%')
+      .height('80%')
+
+      Column(){
+        Image($r("app.media.all_finish_button"))
+          .width('50%')
+          .position({
+            top:'90%',
+            left:'25%'
+          })
+          .onClick(()=>{
+
+          })
+      }
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundImage($r('app.media.background_make'), ImageRepeat.NoRepeat)
+    .backgroundImageSize(ImageSize.Cover)
+  }
+}
