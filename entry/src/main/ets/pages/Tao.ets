@@ -378,6 +378,9 @@ struct Tao {
               left:'37%'
             })
             .onClick(()=>{
+              if (this.currentStep+1>3){
+                this.currentStep=3
+              }
               this.currentStep++
               if (this.currentStep===1) {
                 const words=this.attr.shape.split('_')

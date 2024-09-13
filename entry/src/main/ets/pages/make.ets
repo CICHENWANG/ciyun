@@ -15,10 +15,16 @@ export default struct make {
         .width(355)
         .height(140)
         .position({bottom:242,left:18})
+        .onClick(()=>{
+          router.pushUrl({url:"pages/Tao"})
+        })
       Image($r('app.media.make2'))
         .width(355)
         .height(140)
         .position({bottom:62,left:18})
+        .onClick(()=>{
+          router.pushUrl({url:"pages/Ci"})
+        })
     }
   }
 }

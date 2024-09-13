@@ -412,6 +412,9 @@ struct Index {
               left:'37%'
             })
             .onClick(()=>{
+              if (this.currentStep+1>4){
+                this.currentStep=4
+              }
               this.currentStep++
               if (this.currentStep===1) {
                 // const words=this.attr.shape.split('_')
@@ -432,7 +435,6 @@ struct Index {
                 this.attr.drawColor=this.attr.draw+'_blue'
               }
               else {//到制作完成页面
-
                 router.pushUrl({ url: "pages/MakingFinishCi" })
               }
             })
