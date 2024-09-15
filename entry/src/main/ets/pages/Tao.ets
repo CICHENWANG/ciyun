@@ -41,21 +41,21 @@ const shapeAttributes:Attributes[]=[
   new Attributes(2,'bottle_background','bottle_mingzhu_white','text_bottle_mingzhu',new Pos(60,230),new Pos(76,253),new Pos(180,273),'35%','23%'),
 ]
 const colorAttributes:Attributes[]=[
-  new Attributes(0,'bottle_color_background','bottle_color_black','黑陶',new Pos(83,3),new Pos(110,0),new Pos(0,0),'23%','20%'),
-  new Attributes(1,'bottle_color_background','bottle_color_red','红陶',new Pos(63,73),new Pos(90,71.25),new Pos(0,0),'23%','20%'),
-  new Attributes(2,'bottle_color_background','bottle_color_white','白陶',new Pos(53,145),new Pos(80,142.5),new Pos(0,0),'23%','20%'),
-  new Attributes(3,'bottle_color_background','bottle_color_blue','蓝陶',new Pos(63,217),new Pos(90,213.75),new Pos(0,0),'23%','20%'),
-  new Attributes(4,'bottle_color_background','bottle_color_gray','灰陶',new Pos(83,287),new Pos(110,285),new Pos(0,0),'23%','20%'),
+  new Attributes(0,'bottle_color_background','bottle_color_black','黑陶',new Pos(82,3),new Pos(110,0),new Pos(0,0),'23%','20%'),
+  new Attributes(1,'bottle_color_background','bottle_color_red','红陶',new Pos(62,73),new Pos(90,71.25),new Pos(0,0),'23%','20%'),
+  new Attributes(2,'bottle_color_background','bottle_color_white','白陶',new Pos(52,145),new Pos(80,142.5),new Pos(0,0),'23%','20%'),
+  new Attributes(3,'bottle_color_background','bottle_color_blue','蓝陶',new Pos(62,217),new Pos(90,213.75),new Pos(0,0),'23%','20%'),
+  new Attributes(4,'bottle_color_background','bottle_color_gray','灰陶',new Pos(82,287),new Pos(110,285),new Pos(0,0),'23%','20%'),
 ]
 const drawAttributes:Attributes[]=[
-  new Attributes(0,'bottle_background','bottle_draw_sanjiao','text_bottle_sanjiao',new Pos(60,0),new Pos(114,22),new Pos(180,40),'35%','23%'),
-  new Attributes(1,'bottle_background','bottle_draw_hui','text_bottle_hui',new Pos(30,115),new Pos(84,137),new Pos(150,153),'35%','23%'),
-  new Attributes(2,'bottle_background','bottle_draw_wangge','text_bottle_wangge',new Pos(60,230),new Pos(114,253),new Pos(180,273),'35%','23%'),
+  new Attributes(0,'bottle_background','bottle_draw_sanjiao','text_bottle_sanjiao',new Pos(60,0),new Pos(118,22),new Pos(180,40),'35%','23%'),
+  new Attributes(1,'bottle_background','bottle_draw_hui','text_bottle_hui',new Pos(30,115),new Pos(88,137),new Pos(150,153),'35%','23%'),
+  new Attributes(2,'bottle_background','bottle_draw_wangge','text_bottle_wangge',new Pos(60,230),new Pos(118,253),new Pos(180,273),'35%','23%'),
 ]
 const drawColor:Attributes[]=[
-  new Attributes(1,'bottle_color_background','bottle_draw_white','象牙白',new Pos(68,53),new Pos(95,50.25),new Pos(0,0),'23%','20%'),
-  new Attributes(2,'bottle_color_background','bottle_draw_red','赭红',new Pos(53,145),new Pos(80,142.5),new Pos(0,0),'23%','20%'),
-  new Attributes(3,'bottle_color_background','bottle_draw_black','玄色',new Pos(68,237),new Pos(95,234.75),new Pos(0,0),'23%','20%'),
+  new Attributes(1,'bottle_color_background','bottle_draw_white','象牙白',new Pos(66,53),new Pos(95,50.25),new Pos(0,0),'23%','20%'),
+  new Attributes(2,'bottle_color_background','bottle_draw_red','赭红',new Pos(51,145),new Pos(80,142.5),new Pos(0,0),'23%','20%'),
+  new Attributes(3,'bottle_color_background','bottle_draw_black','玄色',new Pos(66,237),new Pos(95,234.75),new Pos(0,0),'23%','20%'),
 ]
 @Entry
 @Component
@@ -345,7 +345,7 @@ struct Tao {
             Image($r('app.media.finish_back'))
               .width('35')
               .position({
-                top:'85%',
+                top:'80%',
                 left:'17%'
               })
               .onClick(()=>{
@@ -367,14 +367,14 @@ struct Tao {
           Image($r('app.media.finish_button'))
             .width('50%')
             .position({
-              top:'80%',
-              left:'25%'
+              top:'75%',
+              left:'27%'
             })
           Image($r(`app.media.${this.stepBars[this.currentStep].finishText}`))
             .width('25%')
             .position({
-              top:'87%',
-              left:'37%'
+              top:'82%',
+              left:'39%'
             })
             .onClick(()=>{
               if (this.currentStep<3){
@@ -402,8 +402,8 @@ struct Tao {
             Image($r('app.media.text_draw_color_finish'))
               .width('25%')
               .position({
-                top:'87%',
-                left:'37%'
+                top:'82%',
+                left:'39%'
               })
               .onClick(()=>{
                 router.pushUrl({ url: "pages/MakingFinishTao" })
@@ -414,6 +414,9 @@ struct Tao {
       }.width('100%').height('34%')
 
     }.width('100%')
+    .margin({
+      top:'5%'
+    })
     .backgroundImage($r('app.media.background_make'), ImageRepeat.NoRepeat)
     .backgroundImageSize(ImageSize.Cover)
   }
