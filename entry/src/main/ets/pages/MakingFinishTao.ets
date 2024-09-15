@@ -23,7 +23,12 @@ struct MakingFinishTao{
             top:'25%',
             left:'37%'
           })
-      }.width('100%').height('8%')
+      }
+      .width('100%')
+      .height('8%')
+      .margin({
+        top:'9%'
+      })
       Stack() {
         Image($r("app.media.all_finish_background"))
           .width('100%')
@@ -56,6 +61,10 @@ struct MakingFinishTao{
       }
       .width('90%')
       .height('80%')
+      .offset({
+        y:'-3%'
+      })
+
       Image($r("app.media.all_finish_button"))
         .width('50%')
         .position({

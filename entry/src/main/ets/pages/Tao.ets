@@ -90,7 +90,12 @@ struct Tao {
             top:'25%',
             left:'37%'
           })
-      }.width('100%').height('8%')
+      }
+      .width('100%')
+      .height('8%')
+      .margin({
+        top:'9%'
+      })
       //stepBar
       Column() {
         Row(){
@@ -107,11 +112,11 @@ struct Tao {
             }
           })
         }
-      }.width('100%').height('5%')
+      }.width('100%').height('4%')
       Column() {
         Image($r(`app.media.${this.stepBars[this.currentStep].title}`))
           .width('50%')
-      }.width('100%').height('8%')
+      }.width('100%').height('6%')
       //瓷器图片
       Column() {
         Stack(){
@@ -166,7 +171,7 @@ struct Tao {
         //点击查看介绍
         Image($r('app.media.text_click_introduction'))
           .width('25%')
-      }.width('100%').height('45%')
+      }.width('100%').height('42%')
       //选择瓷器属性
       Column() {
         Stack(){
@@ -414,9 +419,6 @@ struct Tao {
       }.width('100%').height('34%')
 
     }.width('100%')
-    .margin({
-      top:'5%'
-    })
     .backgroundImage($r('app.media.background_make'), ImageRepeat.NoRepeat)
     .backgroundImageSize(ImageSize.Cover)
   }
