@@ -4,7 +4,7 @@ export class Pos{
 
   constructor(top:number,left:number) {
     this.top=top
-    this.left=left
+    this.left=left+10
   }
 }
 

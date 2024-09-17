@@ -53,23 +53,23 @@ const shapeAttributes:Attributes[]=[
   new Attributes(2,'bottle_background','ci_meiren_white','text_ci_meiren',new Pos(60,230),new Pos(71,262),new Pos(180,271),'35%','18%'),
 ]
 const colorAttributes:Attributes[]=[
-  new Attributes(0,'bottle_color_background','ci_color_black','黑瓷',new Pos(83,3),new Pos(110,0),new Pos(0,0),'23%','20%'),
-  new Attributes(1,'bottle_color_background','ci_color_red','红瓷',new Pos(63,73),new Pos(90,71.25),new Pos(0,0),'23%','20%'),
-  new Attributes(2,'bottle_color_background','ci_color_white','白瓷',new Pos(53,145),new Pos(80,142.5),new Pos(0,0),'23%','20%'),
-  new Attributes(3,'bottle_color_background','ci_color_blue','青瓷',new Pos(63,217),new Pos(90,213.75),new Pos(0,0),'23%','20%'),
-  new Attributes(4,'bottle_color_background','ci_color_yellow','黄瓷',new Pos(83,287),new Pos(110,285),new Pos(0,0),'23%','20%'),
+  new Attributes(0,'bottle_color_background','ci_color_black','黑瓷',new Pos(82,3),new Pos(110,0),new Pos(0,0),'23%','20%'),
+  new Attributes(1,'bottle_color_background','ci_color_red','红瓷',new Pos(62,73),new Pos(90,71.25),new Pos(0,0),'23%','20%'),
+  new Attributes(2,'bottle_color_background','ci_color_white','白瓷',new Pos(52,145),new Pos(80,142.5),new Pos(0,0),'23%','20%'),
+  new Attributes(3,'bottle_color_background','ci_color_blue','青瓷',new Pos(62,217),new Pos(90,213.75),new Pos(0,0),'23%','20%'),
+  new Attributes(4,'bottle_color_background','ci_color_yellow','黄瓷',new Pos(82,287),new Pos(110,285),new Pos(0,0),'23%','20%'),
 ]
 const drawAttributes:Attributes[]=[
-  new Attributes(0,'bottle_background','ci_draw_hulu','text_ci_hulu',new Pos(60,0),new Pos(90,40),new Pos(180,38),'35%','13%'),
-  new Attributes(1,'bottle_background','ci_draw_lianhua','text_ci_lianhua',new Pos(40,115),new Pos(68,143),new Pos(160,155),'35%','20%'),
-  new Attributes(2,'bottle_background','ci_draw_yuanyang','text_ci_yuanyang',new Pos(60,230),new Pos(100,260),new Pos(180,271),'35%','20%'),
+  new Attributes(0,'bottle_background','ci_draw_hulu','text_ci_hulu',new Pos(60,0),new Pos(92,40),new Pos(180,38),'35%','13%'),
+  new Attributes(1,'bottle_background','ci_draw_lianhua','text_ci_lianhua',new Pos(40,115),new Pos(70,143),new Pos(160,155),'35%','20%'),
+  new Attributes(2,'bottle_background','ci_draw_yuanyang','text_ci_yuanyang',new Pos(60,230),new Pos(102,260),new Pos(180,271),'35%','20%'),
 ]
 const drawColor:Attributes[]=[
-  new Attributes(0,'bottle_color_background','ci_draw_green','绿色',new Pos(83,2),new Pos(110,0),new Pos(0,0),'23%','20%'),
-  new Attributes(1,'bottle_color_background','ci_draw_red','红色',new Pos(63,74),new Pos(90,71.25),new Pos(0,0),'23%','20%'),
-  new Attributes(2,'bottle_color_background','ci_draw_blue','蓝色',new Pos(53,145),new Pos(80,142.5),new Pos(0,0),'23%','20%'),
-  new Attributes(3,'bottle_color_background','ci_draw_yellow','黄色',new Pos(63,217),new Pos(90,213.75),new Pos(0,0),'23%','20%'),
-  new Attributes(4,'bottle_color_background','ci_draw_black','黑色',new Pos(83,287),new Pos(110,285),new Pos(0,0),'23%','20%'),
+  new Attributes(0,'bottle_color_background','ci_draw_green','绿色',new Pos(82,1),new Pos(110,0),new Pos(0,0),'23%','20%'),
+  new Attributes(1,'bottle_color_background','ci_draw_red','红色',new Pos(62,73),new Pos(90,71.25),new Pos(0,0),'23%','20%'),
+  new Attributes(2,'bottle_color_background','ci_draw_blue','蓝色',new Pos(52,144),new Pos(80,142.5),new Pos(0,0),'23%','20%'),
+  new Attributes(3,'bottle_color_background','ci_draw_yellow','黄色',new Pos(62,216),new Pos(90,213.75),new Pos(0,0),'23%','20%'),
+  new Attributes(4,'bottle_color_background','ci_draw_black','黑色',new Pos(82,287),new Pos(110,285),new Pos(0,0),'23%','20%'),
 ]
 
 @Entry
@@ -106,7 +106,12 @@ struct Index {
             top:'25%',
             left:'37%'
           })
-      }.width('100%').height('8%')
+      }
+      .width('100%')
+      .height('8%')
+      .margin({
+        top:'9%'
+      })
       //stepBar
       Column() {
         Row(){
@@ -123,11 +128,11 @@ struct Index {
             }
           })
         }
-      }.width('100%').height('5%')
+      }.width('100%').height('4%')
       Column() {
         Image($r(`app.media.${this.stepBars[this.currentStep].title}`))
           .width('50%')
-      }.width('100%').height('8%')
+      }.width('100%').height('6%')
       //瓷器图片
       Column() {
         Stack(){
@@ -189,7 +194,7 @@ struct Index {
             bottom:-10,
             left:'37%'
           })
-      }.width('100%').height('45%')
+      }.width('100%').height('42%')
       //选择瓷器属性
       Column() {
         Stack(){
@@ -367,8 +372,7 @@ struct Index {
                 })
                 .onClick(()=>{
                   const color=item.attributePhoto.split('_')
-                  const words=this.attr.shape.split('_')
-                  this.attr.color=words[0]+'_'+words[1]+'_'+color[2]
+                  this.attr.drawColor=this.attr.draw+'_'+color[2]
                 })
             })
           }
@@ -377,7 +381,7 @@ struct Index {
             Image($r('app.media.finish_back'))
               .width('35')
               .position({
-                top:'85%',
+                top:'80%',
                 left:'17%'
               })
               .onClick(()=>{
@@ -402,15 +406,15 @@ struct Index {
           Image($r('app.media.finish_button'))
             .width('50%')
             .position({
-              top:'80%',
-              left:'25%'
+              top:'75%',
+              left:'27%'
             })
 
           Image($r(`app.media.${this.stepBars[this.currentStep].finishText}`))
             .width('25%')
             .position({
-              top:'87%',
-              left:'37%'
+              top:'82%',
+              left:'39%'
             })
             .onClick(()=>{
               if (this.currentStep<4){
@@ -442,8 +446,8 @@ struct Index {
             Image($r('app.media.text_draw_color_finish'))
               .width('25%')
               .position({
-                top:'87%',
-                left:'37%'
+                top:'82%',
+                left:'39%'
               })
               .onClick(()=>{
                 router.pushUrl({ url: "pages/MakingFinishCi" })
