@@ -64,7 +64,7 @@ struct MakingFinishTao{
           left:'25%'
         })
         .onClick(()=>{
-          router.pushUrl({ url: "pages/make" })
+          router.pushUrl({ url: "pages/Index" })
         })
     }
     .width('100%')
