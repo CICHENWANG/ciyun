@@ -48,9 +48,9 @@ const stoneAttributes:Attributes[]=[
   new Attributes(2,'bottle_background_ci','ci_stone_ci','瓷石',new Pos(60,230),new Pos(92,258),new Pos(180,273),'35%','19%'),
 ]
 const shapeAttributes:Attributes[]=[
-  new Attributes(0,'bottle_background','ci_donggua_white','text_ci_donggua',new Pos(60,0),new Pos(80,37),new Pos(180,38),'35%','16%'),
-  new Attributes(1,'bottle_background','ci_tianqiu_white','text_ci_tianqiu',new Pos(40,115),new Pos(53,143),new Pos(160,155),'35%','20%'),
-  new Attributes(2,'bottle_background','ci_meiren_white','text_ci_meiren',new Pos(60,230),new Pos(71,262),new Pos(180,271),'35%','18%'),
+  new Attributes(0,'bottle_background','ci_donggua_white','text_ci_donggua',new Pos(60,0),new Pos(84,44),new Pos(180,38),'35%','11%'),
+  new Attributes(1,'bottle_background','ci_tianqiu_white','text_ci_tianqiu',new Pos(40,115),new Pos(40,153),new Pos(160,155),'35%','15%'),
+  new Attributes(2,'bottle_background','ci_meiren_white','text_ci_meiren',new Pos(60,230),new Pos(78,274),new Pos(180,271),'35%','12%'),
 ]
 const colorAttributes:Attributes[]=[
   new Attributes(0,'bottle_color_background','ci_color_black','黑瓷',new Pos(82,3),new Pos(110,0),new Pos(0,0),'23%','20%'),
@@ -138,35 +138,35 @@ struct Index {
         Stack(){
           if (this.attr.shape===''){
             Image($r(`app.media.${this.attr.stone}`))
-              .width('80%')
+              .width('70%')
               .position({
-                top:25
+                top:10
               })
           }
           else if(this.attr.color===''){
             Image($r(`app.media.${this.attr.shape}`))
-              .width('70%')
+              .width('45%')
               .position({
-                top:0
+                top:10
               })
           }
           else if (this.attr.draw===''){
             Image($r(`app.media.${this.attr.color}`))
-              .width('70%')
+              .width('45%')
               .position({
-                top:0
+                top:10
               })
           }
           else if (this.attr.drawColor===''){
             Image($r(`app.media.${this.attr.draw}`))
-              .width('70%')
+              .width('80%')
               .position({
                 top:0
               })
           }
           else {
             Image($r(`app.media.${this.attr.drawColor}`))
-              .width('70%')
+              .width('80%')
               .position({
                 top:0
               })
